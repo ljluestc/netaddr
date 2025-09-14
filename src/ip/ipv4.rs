@@ -53,7 +53,9 @@ impl IPv4 {
 
     /// Check if this is a benchmarking address
     pub fn is_benchmarking(&self) -> bool {
-        self.addr.is_benchmarking()
+        // IPv4 benchmarking addresses: 198.18.0.0/15 (RFC 2544)
+        let octets = self.octets();
+        octets[0] == 198 && (octets[1] == 18 || octets[1] == 19)
     }
 
     /// Check if this is an IANA reserved address

@@ -181,7 +181,7 @@ impl IPv6 {
     /// Generate the network address given a prefix length
     pub fn network_address(&self, prefix_len: u8) -> Self {
         if prefix_len >= 128 {
-            return *self;
+            return self.clone();
         }
 
         let shift = 128 - prefix_len;

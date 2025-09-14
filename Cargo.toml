@@ -31,9 +31,6 @@ criterion = "0.5"
 default = ["serde"]
 serde = ["dep:serde", "dep:serde_json"]
 
-[[bench]]
-name = "ip_benchmarks"
-harness = false
 
 [profile.release]
 opt-level = 3

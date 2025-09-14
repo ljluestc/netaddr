@@ -158,7 +158,7 @@ impl IPAddress {
                 let octets = addr.octets();
                 format!("{}.{}.{}.{}.in-addr.arpa", octets[3], octets[2], octets[1], octets[0])
             }
-            IpAddr::V6(addr) => {
+            IpAddr::V6(_addr) => {
                 let hex_str = self.to_hex();
                 let reversed: String = hex_str
                     .chars()
