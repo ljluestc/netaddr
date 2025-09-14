@@ -10,6 +10,9 @@ license = "BSD-3-Clause"
 repository = "https://github.com/netaddr/netaddr-rust"
 readme = "README.md"
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 [[bin]]
 name = "netaddr"
 path = "src/bin/main.rs"
@@ -23,6 +26,11 @@ regex = "1.10"
 lazy_static = "1.4"
 ipnet = "2.9"
 hex = "0.4"
+wasm-bindgen = { version = "0.2", optional = true }
+wasm-bindgen-futures = { version = "0.4", optional = true }
+js-sys = { version = "0.3", optional = true }
+web-sys = { version = "0.3", optional = true }
+console_error_panic_hook = { version = "0.1", optional = true }
 
 [dev-dependencies]
 criterion = "0.5"
@@ -30,6 +38,14 @@ criterion = "0.5"
 [features]
 default = ["serde"]
 serde = ["dep:serde", "dep:serde_json"]
+wasm = [
+    "wasm-bindgen",
+    "wasm-bindgen-futures",
+    "js-sys",
+    "web-sys",
+    "console_error_panic_hook",
+    "serde"
+]
 
 
 [profile.release]

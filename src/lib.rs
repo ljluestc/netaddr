@@ -32,6 +32,9 @@ pub mod iana;
 pub mod ieee;
 pub mod cli;
 
+#[cfg(feature = "wasm")]
+pub mod wasm;
+
 // Re-export commonly used types
 pub use error::{AddrFormatError, AddrConversionError, NotRegisteredError};
 pub use ip::{IPAddress, IPNetwork, IPRange};

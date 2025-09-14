@@ -1,0 +1,32 @@
+{
+  "name": "netaddr",
+  "type": "module",
+  "collaborators": [
+    "Rust Implementation Based on Python netaddr"
+  ],
+  "description": "A network address manipulation library for Rust",
+  "version": "1.3.0",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/netaddr/netaddr-rust"
+  },
+  "files": [
+    "netaddr_bg.wasm",
+    "netaddr.js",
+    "netaddr.d.ts"
+  ],
+  "main": "netaddr.js",
+  "types": "netaddr.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ],
+  "keywords": [
+    "networking",
+    "ip",
+    "ipv4",
+    "ipv6",
+    "mac",
+    "cidr"
+  ]
+}
